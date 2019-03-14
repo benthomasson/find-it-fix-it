@@ -4,11 +4,15 @@
   "private": false,
   "dependencies": {
     "@babel/runtime": "^7.1.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@patternfly/patternfly-next": "^1.0.41",
     "@patternfly/react-core": "1.51.6",
     "@red-hat-insights/insights-frontend-components": "^3.33.57",
     "classnames": "^2.2.5",
-    "create-react-class": "^15.6.3"
+    "create-react-class": "^15.6.3",
+    "message-fsm": "^1.0.1"
   },
   "sassIncludes": {
     "patternfly": "node_modules/patternfly/dist/sass",
