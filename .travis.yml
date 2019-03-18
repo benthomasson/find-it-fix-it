@@ -1,20 +1,19 @@
 language: node_js
 sudo: required
-cache:
-  directories:
-  - node_modules
 notifications:
   email: false
 node_js:
 - '10'
 install:
-- npm ci
+  - npm ci
 script:
-- npm run travis:verify
+  - npm run travis:verify
+  - npx codecov
 after_success:
-- .travis/after_success.sh
+- curl -sSL https://raw.githubusercontent.com/RedHatInsights/insights-frontend-builder-common/master/src/bootstrap.sh | bash -s
 env:
-  global:
-  - REPO="git@github.com:benthomasson/find-it-fix-it-build"
-  - FILES="dist/index.html"
-  - GH_REPO="https://github.com/benthomasson/find-it-fix-it"
+    global:
+    - REPO="git@github.com:benthomasson/find-it-fix-it-build"
+    - REPO_DIR="find-it-fix-it-build"
+    - BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+    - NODE_OPTIONS="--max-old-space-size=4096 --max_old_space_size=4096"
