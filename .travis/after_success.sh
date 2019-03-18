@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -x
+set -e
+
 # Check if it is a pull request
 if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
     echo -e "Pull Request, not pushing a build"
